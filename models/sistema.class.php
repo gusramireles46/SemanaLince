@@ -10,4 +10,8 @@ class Sistema extends Database
             session_start();
         }
     }
+
+    public function testConnect() {
+        echo $this->conn ? "<br>Conectado" : "<br>Error de conexion";
+    }
 }
