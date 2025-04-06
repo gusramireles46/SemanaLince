@@ -38,11 +38,11 @@
                     </span>
                     <a href="login.controller.php?action=LOGOUT" class="nav-link">Cerrar sesión</a>
                 <?php else: ?>
-                    <a href="login.php" class="nav-link">Iniciar sesión</a>
+                    <a href="login.php" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
                 <?php endif; ?>
                 <button id="themeToggle" class="btn btn-toggle-theme" title="Cambiar tema">🌙</button>
-
             </div>
         </div>
     </div>
 </nav>
+<?php include_once "components/modal_login.php"; ?>
