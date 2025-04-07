@@ -10,7 +10,7 @@ switch ($action) {
         $apod = $api->obtenerAPOD($fecha);
         break;
     default:
-        $apod = $api->obtenerAPOD(); // Imagen del día
+        $apod = $api->obtenerAPOD();
         break;
 }
 

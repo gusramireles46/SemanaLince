@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../models/sistema.class.php";
 class NasaAPI extends Sistema {
-    private $apiKey = "DEMO_KEY"; // reemplaza con tu key si la tienes
+    private $apiKey = "kypAAIhnWbsgdKZrsndki9ATrYGEJj6cxLaqWWNY";
     private $baseUrl = "https://api.nasa.gov";
 
     public function obtenerAPOD()
@@ -21,7 +21,7 @@ class NasaAPI extends Sistema {
     {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Si no tienes certificado SSL válido
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $response = curl_exec($ch);
         $error = curl_error($ch);
         curl_close($ch);
@@ -33,7 +33,6 @@ class NasaAPI extends Sistema {
         return $response;
     }
 
-    // Aquí luego puedes agregar más funciones como:
     // - obtenerEventos()
     // - buscarImagenPorFecha($fecha)
     // - obtenerDetalleDeAsteroide($id)

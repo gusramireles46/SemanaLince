@@ -7,12 +7,9 @@ $usuario = new Usuario();
 switch ($action) {
     case 'REGISTER':
         $datos = (object) $_POST;
-
-        // Opcional: puedes validar campos aquí también antes de llamar al método
         if ($usuario->registrar($datos)) {
             header("Location: ../auth.php?view=login&registro=ok");
         } else {
-            // Puedes manejar un error aquí
             header("Location: ../auth.php?view=register&registro=error");
         }
         break;
@@ -36,5 +33,4 @@ switch ($action) {
             header("Location: ../auth.php?view=login&login=error");
         }
         break;
-
 }
