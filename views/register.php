@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/login.css">
-
+<?php if (isset($alert)) include "components/alert.php"; ?>
 <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <div class="glass-card p-4" style="width: 100%; max-width: 500px;">
         <div class="text-center mb-4">
@@ -9,7 +9,7 @@
             <p class="mb-0">Explorador Espacial</p>
         </div>
 
-        <form action="login.controller.php?action=REGISTER" method="POST" class="needs-validation" novalidate>
+        <form action="controllers/auth.controller.php?action=REGISTER" method="POST" class="needs-validation" novalidate>
 
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="text-center">
-                <small>¿Ya tienes cuenta? <a href="login.php" class="link-light">Inicia sesión</a></small>
+                <small>¿Ya tienes cuenta? <a href="?view=login" class="link-light">Inicia sesión</a></small>
             </div>
         </form>
     </div>

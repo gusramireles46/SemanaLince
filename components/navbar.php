@@ -38,7 +38,7 @@
                     </span>
                     <a href="login.controller.php?action=LOGOUT" class="nav-link">Cerrar sesión</a>
                 <?php else: ?>
-                    <a href="login.php" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
+                    <a href="auth.php" class="nav-link">Iniciar sesión</a>
                 <?php endif; ?>
                 <button id="themeToggle" class="btn btn-toggle-theme" title="Cambiar tema">🌙</button>
             </div>
