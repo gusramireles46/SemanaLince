@@ -101,5 +101,18 @@ body.light-mode .modal-content.glass-card {
     transition: all 0.3s ease;
 }
 
+.justificado {
+    text-align: justify;
+    line-height: 1.8;            /* Espaciado entre líneas */
+    letter-spacing: 0.03em;      /* Espacio entre letras */
+    font-size: 1.05rem;          /* Tamaño ligeramente mayor */
+    text-wrap: pretty;           /* Para que el texto no se rompa raro (opcional) */
+}
 
-
+.img-center {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}

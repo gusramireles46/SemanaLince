@@ -1,6 +1,8 @@
 <?php
-$titulo = "Imágen Astronómica del Día";
+$titulo = "Imagen del Día | Explorador Espacial";
 $vistaActiva = "apod";
-include __DIR__ . "/components/header.php";
-include __DIR__ . "/components/navbar.php";
-include __DIR__ . "/components/footer.php";
+
+include "components/header.php";
+include "components/navbar.php";
+include "controllers/apod.controller.php";
+include "components/footer.php";
