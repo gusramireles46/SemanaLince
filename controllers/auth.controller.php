@@ -16,6 +16,25 @@ switch ($action) {
             header("Location: ../auth.php?view=register&registro=error");
         }
         break;
+    case 'LOGIN':
+        $datos = (object) $_POST;
 
-    // Aquí más adelante puedes agregar case 'LOGIN'
+        // Validación básica
+        if (empty($datos->usuario) || empty($datos->password)) {
+            header("Location: auth.php?view=login");
+            exit;
+        }
+
+        // Intentar login
+        $usuarioLogeado = $usuario->login($datos->usuario, $datos->password);
+
+        if ($usuarioLogeado) {
+            // Si loguea correctamente puedes redirigir a otra vista, como dashboard o index
+            header("Location: ../index.php?login=ok");
+        } else {
+            // Error en credenciales
+            header("Location: ../auth.php?view=login&login=error");
+        }
+        break;
+
 }

@@ -11,6 +11,15 @@ class Sistema extends Database
         }
     }
 
+    public static function alert($type, $message)
+    {
+        $alert = (object)[
+            'type' => $type,
+            'message' => $message
+        ];
+        include __DIR__ . '/../components/alert.php';
+    }
+
     public function testConnect() {
         echo $this->conn ? "<br>Conectado" : "<br>Error de conexion";
     }

@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/login.css">
-<?php if (isset($alert)) include "components/alert.php"; ?>
 <main class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <div class="glass-card p-4" style="width: 100%; max-width: 500px;">
         <div class="text-center mb-4">
