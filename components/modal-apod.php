@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <h4 id="detalleTitulo"></h4>
-                <p class="text-muted mb-2" id="detalleFecha"></p>
+                <p class="fs-6 mb-2" id="detalleFecha"></p>
                 <img id="detalleImagen" src="" alt="Imagen APOD" class="img-fluid rounded mb-3 d-none">
                 <div class="ratio ratio-16x9 mb-3 d-none" id="detalleVideoContainer">
                     <iframe id="detalleVideo" src="" allowfullscreen></iframe>

@@ -16,6 +16,11 @@ if (isset($_GET['login'])) {
     }
 }
 
+if (isset($_GET['alert']) && $_GET['alert'] === 'login_required') {
+    Usuario::alert("warning", "⚠️ Por favor, inicia sesión para agregar favoritos.");
+}
+
+
 include "components/header.php";
 
 if ($vista === 'login') {

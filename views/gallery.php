@@ -10,7 +10,7 @@
                         <img src="<?= $item->url ?>" alt="<?= htmlspecialchars($item->title) ?>" class="card-img-top" style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <h5 class="card-title"><?= htmlspecialchars($item->title) ?></h5>
-                            <p class="text-muted"><?= $item->date ?></p>
+                            <p class="fs-6"><?= $item->date ?></p>
                             <div class="mt-auto">
                                 <button class="btn btn-sm btn-outline-primary mb-2" data-bs-toggle="modal"
                                         data-bs-target="#modalDetalle"
@@ -21,7 +21,7 @@
                                         data-type="<?= $item->media_type ?>">
                                     Ver más
                                 </button>
-                                <form method="POST" action="favoritos.controller.php?action=add">
+                                <form method="POST" action="controllers/favoritos.controller.php?action=add">
                                     <input type="hidden" name="url" value="<?= $item->url ?>">
                                     <input type="hidden" name="titulo" value="<?= htmlspecialchars($item->title) ?>">
                                     <input type="hidden" name="fecha" value="<?= $item->date ?>">

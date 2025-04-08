@@ -50,4 +50,4 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </div>
 </nav>
-<?php include_once "components/modal_login.php"; ?>
+<br><br><br>
