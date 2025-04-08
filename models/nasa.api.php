@@ -1,12 +1,13 @@
 <?php
 require_once __DIR__ . "/../models/sistema.class.php";
-class NasaAPI extends Sistema {
+class NasaAPI extends Sistema
+{
     private $apiKey = "kypAAIhnWbsgdKZrsndki9ATrYGEJj6cxLaqWWNY";
     private $baseUrl = "https://api.nasa.gov";
 
     public function obtenerAPOD()
     {
-        $url = $this->baseUrl . "/planetary/apod?api_key=" . $this->apiKey;
+        $url = $this->baseUrl . "/planetary/apod?api_key={$this->apiKey}";
 
         try {
             $json = $this->fetchData($url);
@@ -19,12 +20,12 @@ class NasaAPI extends Sistema {
 
     private function fetchData($url)
     {
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($ch);
-        $error = curl_error($ch);
-        curl_close($ch);
+        $resource = curl_init($url);
+        curl_setopt($resource, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($resource, CURLOPT_SSL_VERIFYPEER, false);
+        $response = curl_exec($resource);
+        $error = curl_error($resource);
+        curl_close($resource);
 
         if ($response === false) {
             throw new Exception("Error al consultar la API: $error");
@@ -33,7 +34,17 @@ class NasaAPI extends Sistema {
         return $response;
     }
 
-    // - obtenerEventos()
-    // - buscarImagenPorFecha($fecha)
-    // - obtenerDetalleDeAsteroide($id)
+    public function getGallery($start_date, $end_date)
+    {
+        $url = "https://api.nasa.gov/planetary/apod?api_key={$this->apiKey}&start_date={$start_date}&end_date={$end_date}";
+
+        try {
+            $response = $this->fetchData($url);
+            $data = json_decode($response); // sigue siendo stdClass (objetos)
+            return is_array($data) ? $data : []; // protegemos contra errores
+        } catch (Exception $e) {
+            return [];
+        }
+    }
+
 }
